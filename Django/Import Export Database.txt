@@ -1,0 +1,19 @@
+Install module
+	$ pip install django-import-export
+
+Add module to settings.py in INSTALLED_APPS
+	INSTALLED_APPS = [
+	...
+	'import_export',
+	...
+	]
+
+Register in admin.py
+	from import_export.admin import ImportExportModelAdmin
+	from .models import SomeModel
+
+	@admin.register(SomeModel)
+	class SomeAdmin(ImportExportModelAdmin):
+		pass
+
+Go to admin area and there you can import or export in different formates.
