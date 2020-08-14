@@ -1,0 +1,86 @@
+{
+  "editor.smoothScrolling": true,
+  "editor.mouseWheelZoom": true,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "editor.accessibilityPageSize": 20,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.shell.windows": "D:\\Shubham\\GitBash\\Install\\Git\\bin\\bash.exe",
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.formatOnPaste": false
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": -1,
+  "html.format.wrapLineLength": 60,
+  "html.format.wrapAttributes": "force-aligned",
+  "editor.wordWrapColumn": 60,
+  "[markdown]": {},
+  "editor.formatOnSave": true,
+  "files.maxMemoryForLargeFilesMB": 40960,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.minimap.maxColumn": 50,
+  "editor.formatOnPaste": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.preferredDarkColorTheme": "Visual Studio Dark",
+  "workbench.preferredHighContrastColorTheme": "Visual Studio Dark",
+  "workbench.preferredLightColorTheme": "Visual Studio Dark",
+  "material-icon-theme.folders.theme": "specific",
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [
+      80
+    ],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  "dart.debugExternalLibraries": true,
+  "C_Cpp.updateChannel": "Insiders",
+  "python.analysis.cachingLevel": "None",
+  "python.languageServer": "Microsoft",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "javascript.suggest.completeFunctionCalls": true,
+  "html.format.indentInnerHtml": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "python.showStartPage": false,
+  "prettier.jsxBracketSameLine": true,
+  "prettier.printWidth": 60,
+  "python.analysis.symbolsHierarchyDepthLimit": 50,
+  "workbench.editor.labelFormat": "short",
+  "editor.unusualLineTerminators": "auto",
+  "eslint.alwaysShowStatus": true,
+  "eslint.debug": true,
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "vsintellicode.features.python.deepLearning": "enabled",
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": [
+    "--line-length",
+    "65"
+  ],
+  "editor.renderWhitespace": "none",
+  "files.trimTrailingWhitespace": true,
+  "explorer.confirmDelete": false,
+  "emmet.showSuggestionsAsSnippets": true,
+  "window.openFilesInNewWindow": "on",
+  "prettier.trailingComma": "all"
+}
