@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <script>
+            var a = performance.now();
+            var do_something = 0;
+            for(var i = 0; i < 10000; i++)
+            {
+                for(var j = 0; j < 50000; j++)
+                {
+                    do_something += 10;
+                }
+            }
+            a = performance.now() - a;
+            console.log(a/1000);    // a is in ms
+            console.log(do_something);
+	    document.write(a/1000)
+        </script>
+    </body>
+</html>
