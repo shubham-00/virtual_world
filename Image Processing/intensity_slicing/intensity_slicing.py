@@ -23,11 +23,11 @@ for intensity in [
     10,
 ]:
 
-    intensity_corrected = np.array(
+    intensity_changed = np.array(
         255 * (img / 255) ** intensity, dtype="uint8"
     )
 
-    cv2.imshow(f"{intensity} intensity", intensity_corrected)
-    cv2.imwrite(f"{intensity} intensity.jpg", intensity_corrected)
+    cv2.imshow(f"{intensity} intensity", intensity_changed)
+    cv2.imwrite(f"{intensity} intensity.jpg", intensity_changed)
 
 cv2.waitKey(0)  # Press '0' to close all images.
