@@ -1,0 +1,45 @@
+ACTION
+const login = (token) => {
+  return {
+    type: "LOGIN",
+    token,
+  };
+};
+
+REDUCER
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "LOGIN":
+      if (action.token === "") {
+        return { ...state, auth: false, token: action.token };
+      }
+      localStorage.setItem("token", action.token);
+
+      return { ...state, auth: true, token: action.token };
+
+    default:
+      return state;
+  }
+};
+
+STORE
+const store = createStore(reducer);
+
+
+
+
+USAGE
+
+Index
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root"),
+);
+
+Login
+const storeState = useSelector((state) => state); // state of the store
+
+const dispatch = useDispatch(); // Dispatch actions
+dispatch(login(token)); // Dispatch login action
