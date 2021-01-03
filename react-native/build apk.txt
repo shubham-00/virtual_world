@@ -1,0 +1,10 @@
+Go to the root of your project
+
+mkdir android/app/src/main/assets
+
+Rename index.android.js (in root directory) to index.js (Maybe there is an index.js file in which case you do not need to rename it).
+react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+
+Open 'android' folder in android studio and build.
+Apk file will be at android/app/build/outputs/apk/debug/app-debug.apk
+
