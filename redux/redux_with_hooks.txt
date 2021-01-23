@@ -1,0 +1,105 @@
+REDUCERS
+Reducers are the actual entities which change the store state
+We can have as many reducers as we want.
+
+// authReducer.js
+const initialState = {
+  error: null,
+  token: null,
+  loading: null,
+};
+const authReducer = (state = initialState, action) {
+  if (action.type === "LOGIN") {
+    const results = authenticateUser() // this used axios to call some apis and validated the user and returns an object. (this is not related to redux...)
+    if (results.error) {
+      return {
+        ...state,
+        error: results.error,
+      };
+    }
+    else {
+      return {
+        ...state,
+        token: results.data.token,
+      };
+    }
+  }
+  if (action.type === "SIGNUP") {
+    ... 
+  }
+  ...
+  return state;
+};
+export ...
+
+// rootReducer.js
+import { combineReducers } from "redux";
+import authReducer from "./authReducer";
+const rootReducer = combineReducers({
+	auth: authReducer,
+});
+export ...
+
+
+
+
+
+
+ACTIONS
+actions are the way we ask to change the state, and we do not actuall change state here, we configure only the data that we need to pass then to the reducers.
+
+import axios from "axios";
+const loginAction = (username, password) => {
+  return {
+    type: "LOGIN",
+    payload: {
+      username,
+      password
+    }
+  };
+}
+
+
+
+
+
+
+STORE
+// store.js
+import reducer from "..somepath../rootReducer";
+const store = createStore(reducer);
+export ...
+
+
+
+
+
+
+PROVIDER (provide store in the base component, so it is accessible to all the components...)
+// index.js
+import store from "..somepath../store";
+import ReactDOM from "react-dom";
+ReactDOM.render(
+	<React.StrictMode>
+		<Provider store={store}>
+			<App />
+		</Provider>
+	</React.StrictMode>,
+	document.getElementById("root"),
+);
+
+
+
+
+
+
+GET THE STORE STATE (ALSO AUTO RERENDER WHEN STORE STATE IS CHANGED)
+
+Consider the Login component, which needs some state like { auth: { token: null, loading: false, error: null }, ...otherState }
+so we want out login component to dispatch an action (login action), and also we want new store state whenever the 'auth' (in the store state) is changed.
+
+import { useDispatch, useSelector } from "react-redux";
+const authState = useSelector((state) => state.auth); // fullState is an object, which contains the state of the store (only the 'auth' part in this case) and whenever the state is changed the object is updated automatically and this component (Login.js) rerenders automatically.
+const dispatch = useDispatch(); // dispatch function will be used to dispatch an action and the action is the way to make changed in the store state.
+
+dispatch(loginAction(username, password)) // dispatch function is calling the action function and this will lead to the state changes. (here we got username and password from the DOM.)
