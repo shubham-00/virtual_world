@@ -1,0 +1,12 @@
+MPAndroidChart: https://github.com/PhilJay/MPAndroidChart
+used to plot charts having a lot of functionalities...
+
+
+
+graphview: https://github.com/jjoe64/GraphView
+used to plot graphs
+
+
+
+Circle Image: https://github.com/hdodenhof/CircleImageView
+used to display images with circled border
