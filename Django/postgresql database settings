@@ -1,0 +1,12 @@
+# in settings.py file change this...
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "hrlyouru",
+        "USER": "hrlyouru",
+        "PASSWORD": "w8wufvSY1s9MBsK2_Kyin6bJ8AEXCHLK",
+        "HOST": "queenie.db.elephantsql.com",
+        "PORT": "5432",
+    }
+}
