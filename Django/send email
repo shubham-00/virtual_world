@@ -1,0 +1,20 @@
+from django.core.mail import send_mail
+
+subject = "Hello"
+from_email = "from@example.com"
+recipient_list = ['to1@example.com', "to2@example.com"]
+fail_silently = False
+auth_user = "from@example.com"
+auth_password = "authpassword123"
+html_message = "<h1>Hello</h1>"
+
+send_main(
+  subject,
+  html_message,
+  from_email,
+  recipient_list,
+  fail_silently=fail_silently,
+  auth_user=auth_user,
+  auth_password=auth_password,
+  html_message=html_message
+)
