@@ -1,0 +1,51 @@
+I am working with the Django Framework, and I want to do one specific thing. In my HTML template, I have a form with the Image Field, and when submitted, it goes to the views, and without saving that uploaded image, I want to process it using OpenCV, and I want to send the processed image back to the user as a FileResponse (or whatever response).
+
+HTML is easy, but here's the code for views.py .
+
+
+from django.shortcuts import render
+from django.http import FileResponse
+import tempfile  # inbuilt module
+import cv2
+
+
+def home_view(request):
+    if request.method == "POST":
+
+        # we have the file here.
+        input_file = request.FILES.get("img")
+
+        # a new file which is a temp file.
+        fp = tempfile.NamedTemporaryFile()
+
+        # we write the uploaded image in temp file
+        for chunk in input_file.chunks():
+            fp.write(chunk)
+
+        # OpenCV read file
+        image = cv2.imread(fp.name)
+
+        # file editing (pure opencv)
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        image = cv2.resize(image, (500, 500))
+
+        # we want to save image without imwrite, which requires
+        # the extension of the filename
+        # so we got the other way
+
+        # image is saved in a buffer
+        success, buffer = cv2.imencode(".jpg", image)
+
+        # content of the buffer (edited image) are sent to the temp file
+        buffer.tofile(fp.name)
+
+        # get to the starting point of the temp file
+        fp.seek(0)
+
+        # return a file response!
+        return FileResponse(
+            fp, as_attachment=True, filename="done.png"
+        )
+
+    return render(request, "image2pdf/home.html")
+
